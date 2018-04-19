@@ -25,6 +25,9 @@ set -o errexit -o xtrace
 
 SCRIPTS_DIR=${BASH_SOURCE%/*}
 
+export LIMIT=${LIMIT:-10000}
+export TIMEF=${TIMEF:-time_ndis}
+
 
 benchmark() {
     local revs=$(git describe --always --tags HEAD~{2..0})
